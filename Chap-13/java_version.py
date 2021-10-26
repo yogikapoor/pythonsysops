@@ -8,8 +8,7 @@ rc = sp.wait()
 out, err = sp.communicate()
 
 if rc==0:
-    for each_line in err:
-        print(f"Java Version: {eachline} ")
+    print('Java Version:', err.splitlines()[0].split()[2].strip("\""))
 
 # print(f" Java Version: {err.split()[2]}")
 
