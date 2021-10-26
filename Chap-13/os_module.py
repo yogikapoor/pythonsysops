@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 import os
 
 print(os.getcwd())
-os.chdir('$HOME')
+os.chdir(os.environ.get('HOME'))
 print(os.getcwd())
 print(os.listdir())
 print(os.listdir("/home"))
