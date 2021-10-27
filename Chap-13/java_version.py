@@ -7,8 +7,12 @@ sp = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE, stderr=subprocess.P
 rc = sp.wait()
 out, err = sp.communicate()
 
+print(out)
+print(err)
+
 if rc==0:
-    print('Java Version:', err.splitlines()[0].split()[2].strip("\""))
+    if bool(out) == False and bool(err) == True:
+        print('Java Version:', err.splitlines()[0].split()[2].strip("\""))
 
 # print(f" Java Version: {err.split()[2]}")
 
